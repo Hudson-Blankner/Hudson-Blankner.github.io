@@ -1,0 +1,16 @@
+.headshot {
+    width: 300px;
+    height:auto
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 400px;
+    margin-top: 40px;
+}
+
+.about-text {
+    max-width: 400px;
+}
