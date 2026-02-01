@@ -14,3 +14,23 @@
 .about-text {
     max-width: 400px;
 }
+
+.middle {
+    text-align: center;
+}
+
+.footer {
+    margin-top: auto;
+    text-align: center;
+    
+}
+
+.job-header {
+  display: flex;
+  
+  align-items: baseline;
+}
+
+.date {
+  margin-left: 40px;
+}
