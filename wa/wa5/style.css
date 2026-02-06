@@ -1,5 +1,10 @@
 /* || General setup */
 
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -66,7 +71,7 @@ article {
 
 nav {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #ffffff;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
