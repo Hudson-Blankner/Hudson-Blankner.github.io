@@ -1,3 +1,23 @@
+/* ----
+   COLOR CONTRAST REPORT
+
+   Body text (#2a2a2a) on background (#dde):
+   Contrast ratio: 10.69:1
+   Passes WCAG AAA
+
+   Navigation links (#000000) on #ffffff:
+   Contrast ratio: 21:1
+   Passes WCAG AAA
+
+   Button text (#ffffff) on #333333:
+   Contrast ratio: 12.63:1
+   Passes WCAG AAA
+
+   Table text (#2a2a2a) on #dde:
+   Contrast ratio: 10.69:1
+   Passes WCAG AAA
+---- */
+
 /* || General setup */
 
 .visually-hidden {
@@ -58,7 +78,7 @@ p, li, table {
 
 nav, article, footer, .secondary {
   background-color: white;
-  /* better*/
+  /**/
 }
 
 article, footer, .secondary {
