@@ -23,13 +23,13 @@
             --spacing-lg: 1.5rem;
             --spacing-xl: 2rem; */
             /* 
-            scaled the previous values by 1.25 times the previous value
+            old version ^
             */
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.312rem;
-            --spacing-md: .390rem;
-            --spacing-lg: .488rem;
-            --spacing-xl: .610rem;
+            --spacing-xs: 0.5rem;   /* 8px */
+            --spacing-sm: 1rem;     /* 16px */
+            --spacing-md: 1.5rem;   /* 24px */
+            --spacing-lg: 2rem;     /* 32px */
+            --spacing-xl: 3rem;     /* 48px */
 
             /* Border Radius */
             --radius-sm: 4px;
@@ -58,21 +58,24 @@
 
         /* Typography Styles */
         h1 {
-            font-size: 3rem;
+            font-size: 1.95rem;
+            /* was 3 */
             font-weight: 700;
             margin-bottom: var(--spacing-md);
             color: var(--color-primary);
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.56rem;
+            /* was 2 */
             font-weight: 600;
             margin-bottom: var(--spacing-md);
             color: var(--color-secondary);
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            /* was 1.5 */
             font-weight: 500;
             margin-bottom: var(--spacing-sm);
             color: var(--color-accent);
@@ -80,11 +83,13 @@
 
         .body-text {
             font-size: 1rem;
+            /* still 1 */
             margin-bottom: var(--spacing-md);
         }
 
         .small-text {
-            font-size: 0.75rem;
+            font-size: 0.8rem; 
+            /* was .75 */
             color: color-mix(in srgb, var(--color-text-dark) 70%, transparent);
         }
 
@@ -118,6 +123,12 @@
             border: 2px solid transparent;
         }
 
+        .button:focus-visible {
+            outline: 3px solid var(--color-highlight);
+            outline-offset: 3px;
+            /* added */
+        }
+
         .button:hover {
             background-color: color-mix(in srgb, var(--color-primary) 80%, black);
             border-color: var(--color-secondary);
@@ -135,6 +146,12 @@
             transition: color 0.3s ease, text-decoration-color 0.3s;
         }
 
+        .link:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        }
+        /* added */
+
         .link:hover {
             color: var(--color-accent);
             text-decoration: underline;
@@ -144,6 +161,21 @@
         .link:visited {
             color: var(--color-neutral);
         }
+
+        input,textarea {
+            padding: var(--spacing-sm);
+            border: 2px solid var(--color-neutral);
+            border-radius: var(--radius-sm);
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+        }
+
+        input:focus,textarea:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 40%, transparent);
+        }
+
 
         /* Spacing Demonstration */
         .spacing-demo {
