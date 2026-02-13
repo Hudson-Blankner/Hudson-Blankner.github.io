@@ -17,11 +17,19 @@
             --font-secondary: 'Roboto Mono', monospace;
 
             /* Spacing System */
-            --spacing-xs: 0.25rem;
+            /* --spacing-xs: 0.25rem;
             --spacing-sm: 0.5rem;
             --spacing-md: 1rem;
             --spacing-lg: 1.5rem;
-            --spacing-xl: 2rem;
+            --spacing-xl: 2rem; */
+            /* 
+            scaled the previous values by 1.25 times the previous value
+            */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.312rem;
+            --spacing-md: .390rem;
+            --spacing-lg: .488rem;
+            --spacing-xl: .610rem;
 
             /* Border Radius */
             --radius-sm: 4px;
