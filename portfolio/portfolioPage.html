@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hudson Blankner - Portfolio</title>
-    <link rel="stylesheet" href="webPage.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hudson Blankner - Projects</title>
+  <link rel="stylesheet" href="webPage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap">
 </head>
 <body>
-    <h1 class="middle">Welcome to My Portfolio Page</h1>
-    <p class="middle">
-        <a href="homePage.html">Home Page</a> |
-        <a href="jobExperiencePage.html">Experience</a> |
-        <a href="hobbiesPage.html">Hobbies</a>
-    </p>
-    <section>
-        <dl>
-            <h2>Plinko Game Simulator</h2>
-            <dd>Built an interactive Plinko-style game with custom peg behaviors, dynamic scoring, and real-time user controls. Designed the full game logic and UI from scratch.</dd>
-            <dd><strong>Tech</strong> p5.js, JavaScript</dd>
-            <dd><strong>Links</strong>: <a href="https://editor.p5js.org/Hudson.Blankner/full/veulp_Taj" target="_blank">Live Demo</a></dd>
-        </dl>
-    </section>
-    <section>
-        <dl>
-            <dt>Samo-Hi Athletic Student Sports Aid Program (SASSAP)</dt>
-            <dd>Designed and proposed a school-wide sports medicine support program that trains student aides to assist athletic teams, reducing coach and athletic trainer workload while creating hands-on student opportunities.</dd>
-            <dd><strong>Tech / Skills</strong>: Program design, proposal writing, leadership, sports medicine operations</dd>
-            <dd><strong>Links</strong>: <a href="sassap-proposal.pdf" target="_blank">View Proposal (PDF)</a></dd>
-        </dl>
-    </section>
-    <footer class="footer">
-        <p>
-            Hudson Blankner
-        </p>
-        <p>
-            <a href="mailto:hmblankner1@gmail.com">Email</a>
-        </p>
-    </footer>
+  <header class="site-header">
+    <div class="container header-inner">
+      <p>Hudson Blankner</p>
+      <nav class="site-nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="homePage.html">Home</a></li>
+          <li><a class="nav-link" href="portfolioPage.html">Projects</a></li>
+          <li><a class="nav-link" href="jobExperiencePage.html">Experience</a></li>
+          <li><a class="nav-link" href="hobbiesPage.html">Hobbies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Projects</h1>
+    <p class="summary">A few projects I've built or proposed.</p>
+
+    <div class="cards cards-3">
+      <section class="card">
+        <h2 class="card-title">Plinko Game Simulator</h2>
+        <p>Built an interactive Plinko-style game with custom peg behaviors, dynamic scoring, and real-time user controls. Designed the full game logic and UI from scratch.</p>
+        <p><strong>Tech:</strong> p5.js, JavaScript</p>
+        <p><strong>Links:</strong> <a href="https://editor.p5js.org/Hudson.Blankner/full/veulp_Taj" target="_blank" rel="noopener noreferrer">Live Demo</a></p>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">Samo-Hi Athletic Student Sports Aid Program (SASSAP)</h2>
+        <p>Designed and proposed a school-wide sports medicine support program that trains student aides to assist athletic teams, reducing coach and athletic trainer workload while creating hands-on student opportunities.</p>
+        <p><strong>Tech / Skills:</strong> Program design, proposal writing, leadership, sports medicine operations</p>
+        <p><strong>Links:</strong> <a href="sassap-proposal.pdf" target="_blank" rel="noopener noreferrer">View Proposal (PDF)</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Hudson Blankner</p>
+      <p><a href="mailto:hmblankner1@gmail.com">Email</a></p>
+    </div>
+  </footer>
 </body>
 </html>
