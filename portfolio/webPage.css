@@ -15,7 +15,12 @@
 .section-title {
   margin: 0 0 12px;
   font-size: 28px;
-  color: #2E2F23;
+
+  display: inline-block;
+  padding: 4px 10px;
+  border-left: 2px solid #734E30;      /*coffee bar*/
+  background: rgba(115, 78, 48, 0.10); /* coffee tint */
+  border-radius: 12px;
 }
 
 /* sticky header + nav */
@@ -44,9 +49,24 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  background: #F1EBE4;
-  border-bottom: 1px solid #87826E; /* Antique */
-  z-index: 10;
+  z-index: 10;  
+  background: #F1EBE4;  /* richer sand */
+  border-bottom: 2px solid #464831; /* olive */
+  box-shadow: 0 8px 18px #2e2f231a;
+}
+
+.nav-link.current {
+  background: rgba(70, 72, 49, 0.18);    /* olive tint */
+  border: 1px solid rgba(70, 72, 49, 0.35);
+}
+
+main.container {
+  background: #EEE3D6;
+  border: 1px solid rgba(135, 130, 110, 0.45); /* work */
+  border-radius: 18px;
+  margin: 18px auto 40px;
+  box-shadow: 0 12px 26px rgba(46, 47, 35, 0.10);
+  padding: 10px;
 }
 
 a {
@@ -108,8 +128,9 @@ main {
 }
 
 .card {
-  background: #F7F2EC;
-  border: 1px solid rgba(135, 130, 110, 0.5);
+  background:linear-gradient(180deg, rgba(115, 78, 48, 0.10) 0%, rgba(115, 78, 48, 0) 45%), #F7F2EC;
+  border: 1px solid rgba(135, 130, 110, 0.55);
+  border-left: 2px solid #734E30;
   border-radius: 16px;
   padding: 15px;
   transition: transform 150ms;
@@ -159,7 +180,8 @@ main {
 
 /* footer */
 .site-footer {
-  border-top: 1px solid #87826E;
+  border-top: 2px solid #464831;
+  background: #E8DDCF;
   padding: 20px 0;
   color: #2E2F23;
   opacity: 0.85;
