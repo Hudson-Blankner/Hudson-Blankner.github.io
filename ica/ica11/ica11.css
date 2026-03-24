@@ -1,111 +1,133 @@
-/* base */
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #F1EBE4;
-  color: #22231A;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F1EBE4;
+    color: #22231A;
 }
 
-/* layout */
+.site-header p{
+    font-family: "DM Serif Display", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;  
+    background: #F1EBE4;  /* richer sand */
+    border-bottom: 2px solid #464831; /* olive */
+    box-shadow: 0 8px 18px #2e2f231a;
+}
+
+.site-header p {
+    margin: 0;
+    font-size: 26px;
+}
+
+.site-header .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
 .container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
-/* title */
 .page-title {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 32px;
-  margin-bottom: 20px;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-/* card */
 .card {
-  background: #F7F2EC;
-  border: 1px solid rgba(135, 130, 110, 0.5);
-  border-left: 3px solid #734E30;
-  border-radius: 16px;
-  padding: 20px;
+    background: #F7F2EC;
+    border: 1px solid rgba(135, 130, 110, 0.5);
+    border-left: 3px solid #734E30;
+    border-radius: 16px;
+    padding: 20px;
 }
 
-/* section title (like "A Little About Me") */
 .section-title {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 24px;
-  margin-bottom: 16px;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 16px;
 
-  display: inline-block;
-  padding: 6px 12px;
-  border-left: 2px solid #734E30;
-  background: rgba(115, 78, 48, 0.1);
-  border-radius: 12px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-left: 2px solid #734E30;
+    background: rgba(115, 78, 48, 0.1);
+    border-radius: 12px;
 }
 
-/* form */
 .form-group {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 label {
-  display: block;
-  margin-bottom: 6px;
+    display: block;
+    margin-bottom: 6px;
 }
 
-/* input */
 input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  border-radius: 10px;
-  border: 1px solid rgba(135, 130, 110, 0.6);
-  background: #fff;
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(135, 130, 110, 0.6);
+    background: #fff;
 }
 
-/* fieldset */
 .locale-box {
-  margin: 16px 0;
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(135, 130, 110, 0.5);
-  background: rgba(115, 78, 48, 0.05);
-}
+    margin: 16px 0;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(135, 130, 110, 0.5);
+    background: rgba(115, 78, 48, 0.05);
+    }
 
 .locale-box legend {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-/* button */
 .generate-btn {
-  margin-top: 12px;
-  padding: 10px 16px;
+    margin-top: 12px;
+    padding: 10px 16px;
 
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 18px;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 18px;
 
-  color: #2E2F23;
-  background: rgba(115, 78, 48, 0.12);
+    color: #2E2F23;
+    background: rgba(115, 78, 48, 0.12);
 
-  border: 2px solid #734E30;
-  border-radius: 12px;
+    border: 2px solid #734E30;
+    border-radius: 12px;
 
-  cursor: pointer;
-  transition: all 150ms ease;
+    cursor: pointer;
+    transition: all 150ms ease;
 }
 
 .generate-btn:hover {
-  background: rgba(115, 78, 48, 0.2);
-  transform: translateY(-1px);
+    background: rgba(115, 78, 48, 0.2);
+    transform: translateY(-1px);
 }
 
 .generate-btn:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
-/* output */
 .story {
-  margin-top: 16px;
-  padding: 12px;
-  border-radius: 12px;
-  background: #EEE3D6;
-  border-left: 3px solid #734E30;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #EEE3D6;
+    border-left: 3px solid #734E30;
 }
