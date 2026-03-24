@@ -13,33 +13,36 @@
       <p class="site-brand">Random Story Generator</p>
     </div>
     </header>
-
     <main class="container">
-        <div class="summary">
-            <label for="custom-name">Enter custom name:</label>
-            <input id="custom-name" type="text">
-            
-            <fieldset>
-            <legend>Choose locale:</legend>
-
-            <label for="us">US</label>
-            <input id="us" type="radio" name="uk-us" value="us" checked/>
-
-            <label for="uk">UK</label>
-            <input id="uk" type="radio" name="uk-us" value="uk"/>
-            </fieldset>
-        </div>
+        <h1 class="page-title">Random Story Generator</h1>
 
         <section class="card">
             <div class="about-box">
-            <div>
-                <h2 class="section-title">
-                    <button class="generate">Generate random story</button>
-                </h2>
-                <p class="story"></p>
+                <div>
+                    <h2 class="section-title">Customize Story</h2>
+
+                    <div class="form-group">
+                        <label for="custom-name">Enter custom name:</label>
+                        <input id="custom-name" type="text">
+                    </div>
+
+                    <fieldset class="locale-box">
+                    <legend>Choose locale:</legend>
+
+                    <label>
+                        <input id="us" type="radio" name="uk-us" value="us" checked>US
+                    </label>
+                    <label>
+                        <input id="uk" type="radio" name="uk-us" value="uk">UK
+                    </label>
+                    </fieldset>
+
+                    <button class="generate-btn generate">Generate random story</button>
+
+                    <p class="story"></p>
+                </div>
             </div>
-            </div>
-        </section>  
+        </section>
     </main>
 <script>
     // Complete variable definitions and random functions
