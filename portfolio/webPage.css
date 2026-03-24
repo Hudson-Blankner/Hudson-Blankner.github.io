@@ -35,6 +35,9 @@ body {
   line-height: 1.6;
   background: #F1EBE4; /* Salt */
   color: #22231A;      /* Raisin Black */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary {
@@ -185,6 +188,7 @@ main {
   padding: 20px 0;
   color: #2E2F23;
   opacity: 0.85;
+  margin-top: auto;
 }
 
 .site-footer p {
