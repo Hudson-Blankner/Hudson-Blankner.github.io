@@ -5,24 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="ica11.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap">
 </head>
 <body>
-    <div>
-        <label for="custom-name">Enter custom name:</label>
-        <input id="custom-name" type="text" placeholder="" />
+    <header class="site-header">
+    <div class="container header-inner">
+      <p class="site-brand">Random Story Generator</p>
     </div>
-        <fieldset>
-        <legend>Choose locale:</legend>
-        <label for="us">US</label>
-        <input id="us" type="radio" name="uk-us" value="us" checked />
-        <label for="uk">UK</label>
-        <input id="uk" type="radio" name="uk-us" value="uk" />
-        </fieldset>
-    <div>
-        <button class="generate">Generate random story</button>
-    </div>
-<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
-<p class="story"></p>
+    </header>
+
+    <main class="container">
+        <div class="summary">
+            <label for="custom-name">Enter custom name:</label>
+            <input id="custom-name" type="text">
+            
+            <fieldset>
+            <legend>Choose locale:</legend>
+
+            <label for="us">US</label>
+            <input id="us" type="radio" name="uk-us" value="us" checked/>
+
+            <label for="uk">UK</label>
+            <input id="uk" type="radio" name="uk-us" value="uk"/>
+            </fieldset>
+        </div>
+
+        <section class="card">
+            <div class="about-box">
+            <div>
+                <h2 class="section-title">
+                    <button class="generate">Generate random story</button>
+                </h2>
+                <p class="story"></p>
+            </div>
+            </div>
+        </section>  
+    </main>
 <script>
     // Complete variable definitions and random functions
 
