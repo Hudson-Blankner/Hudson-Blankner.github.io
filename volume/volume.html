@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Volume Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .box {
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    #sentence {
+      background-color: #eeeeee;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      margin-top: 15px;
+      box-sizing: border-box;
+    }
+
+    #volume {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #info {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    #message {
+      margin-top: 10px;
+      color: red;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Typing Volume Control</h1>
+
+    <p>Type this sentence to set the volume:</p>
+    <p id="sentence">The quick brown fox jumped over the lazy dog.</p>
+
+    <input type="text" id="typingBox" placeholder="Start typing here">
+
+    <div id="volume">Volume: 0%</div>
+    <div id="info">WPM: 0</div>
+    <div id="message"></div>
+  </div>
+
+<script>
+  let sentence = "The quick brown fox jumped over the lazy dog.";
+  let typingBox = document.getElementById("typingBox");
+  let volumeText = document.getElementById("volume");
+  let infoText = document.getElementById("info");
+  let messageText = document.getElementById("message");
+
+  let startTime = 0;
+  let startedTyping = false;
+  let currentVolume = 0;
+
+  typingBox.addEventListener("input", function () {
+    let typedText = typingBox.value;
+
+    if (startedTyping === false && typedText.length > 0) {
+      startTime = Date.now();
+      startedTyping = true;
+    }
+
+    if (typedText.length >= sentence.length) {
+      if (typedText === sentence) {
+        let endTime = Date.now();
+        let totalTime = (endTime - startTime) / 1000;
+        let minutes = totalTime / 60;
+
+        let wordCount = sentence.split(" ").length;
+        let wpm = wordCount / minutes;
+
+        let volumePercent = 0;
+
+        if (wpm <= 27) {
+          volumePercent = 0;
+        } else if (wpm >= 90) {
+          volumePercent = 100;
+        } else {
+          volumePercent = ((wpm - 27) / (90 - 27)) * 100;
+        }
+
+        volumePercent = Math.round(volumePercent);
+        wpm = Math.round(wpm);
+
+        currentVolume = volumePercent;
+
+        volumeText.textContent = "Volume: " + currentVolume + "%";
+        infoText.textContent = "WPM: " + wpm;
+        messageText.textContent = "Sentence completed.";
+
+      } else {
+        messageText.textContent = "Wrong sentence. Try again.";
+      }
+
+      typingBox.value = "";
+      startedTyping = false;
+    }
+
+    if (typingBox.value.length === 0 && startedTyping === false) {
+      volumeText.textContent = "Volume: " + currentVolume + "%";
+    }
+  });
+</script>
+</body>
+</html>
