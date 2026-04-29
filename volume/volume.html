@@ -62,14 +62,55 @@
       color: red;
       font-size: 16px;
     }
+    .popup-background {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-box {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .popup-box h2 {
+      margin-top: 0;
+    }
+
+    .popup-box button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #333333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background-color: #555555;
+    }
   </style>
 </head>
 <body>
   <div class="box">
     <h1>Typing Volume Control</h1>
 
-    <p>Type this sentence to set the volume:</p>
-    <p id="sentence">The quick brown fox jumped over the lazy dog.</p>
+    <p>
+      Type the sentence shown below. Your typing speed controls the volume.
+      Any speed between 25 and 90 WPM is scaled between 0% and 100%.</p>
+    <p id="sentence"></p>
 
     <input type="text" id="typingBox" placeholder="Start typing here">
 
@@ -77,18 +118,61 @@
     <div id="info">WPM: 0</div>
     <div id="message"></div>
   </div>
-
+  <div class="popup-background" id="popupBackground">
+    <div class="popup-box">
+      <h2>Volume Updated</h2>
+      <p id="apiMessage"></p>
+      <button id="okayButton">OK</button>
+    </div>
+  </div>
 <script>
-  let sentence = "The quick brown fox jumped over the lazy dog.";
+  let sentences = [
+  "The quick brown fox jumps over the lazy dog!",
+  "Pack my box with five dozen liquor jugs.",
+  "The five boxing wizards jump quickly.",
+  "Sphinx of black quartz, judge my vow.",
+  "Jackdaws love my big sphinx of quartz.",
+  "How vexingly quick daft zebras jump!",
+  "Bright vixens jump; dozy fowl quack.",
+  "Waltz, bad nymph, for quick jigs vex.",
+  "Quick zephyrs blow, vexing daft Jim.",
+  "Two driven jocks help fax my big quiz."
+  ];
+
+  let sentence = "";
+  let sentenceText = document.getElementById("sentence");
   let typingBox = document.getElementById("typingBox");
   let volumeText = document.getElementById("volume");
   let infoText = document.getElementById("info");
   let messageText = document.getElementById("message");
+  let popupBackground = document.getElementById("popupBackground");
+  let apiMessage = document.getElementById("apiMessage");
+  let okayButton = document.getElementById("okayButton");
 
   let startTime = 0;
   let startedTyping = false;
   let currentVolume = 0;
 
+
+  function chooseRandomSentence() {
+    let randomIndex = Math.floor(Math.random() * sentences.length);
+    sentence = sentences[randomIndex];
+    sentenceText.textContent = sentence;
+  }
+
+  function volumeAPI(newVolume) {
+    return "The new volume is " + newVolume + "%.";
+  }
+
+  function showPopup(message) {
+    apiMessage.textContent = message;
+    popupBackground.style.display = "flex";
+  }
+  okayButton.addEventListener("click", function () {
+    popupBackground.style.display = "none";
+    typingBox.focus();
+  });
+  chooseRandomSentence();
   typingBox.addEventListener("input", function () {
     let typedText = typingBox.value;
 
@@ -108,12 +192,12 @@
 
         let volumePercent = 0;
 
-        if (wpm <= 27) {
+        if (wpm <= 25) {
           volumePercent = 0;
         } else if (wpm >= 90) {
           volumePercent = 100;
         } else {
-          volumePercent = ((wpm - 27) / (90 - 27)) * 100;
+          volumePercent = ((wpm - 25) / (90 - 25)) * 100;
         }
 
         volumePercent = Math.round(volumePercent);
@@ -125,12 +209,16 @@
         infoText.textContent = "WPM: " + wpm;
         messageText.textContent = "Sentence completed.";
 
+        let apiResponse = volumeAPI(currentVolume);
+        showPopup(apiResponse);
+
       } else {
-        messageText.textContent = "Wrong sentence. Try again.";
+        messageText.textContent = "Wrong sentence. Try again. Volume did not change.";
       }
 
       typingBox.value = "";
       startedTyping = false;
+      chooseRandomSentence();
     }
 
     if (typingBox.value.length === 0 && startedTyping === false) {
